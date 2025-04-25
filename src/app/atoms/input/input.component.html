@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [type]="type"
+    (input)="updateSearchText($event)"
+  />
+</mat-form-field>

@@ -1,0 +1,8 @@
+<form (submit)="onSubmit.emit($event)">
+  <app-input
+    [label]="inputLabel"
+    [type]="inputType"
+    [(searchText)]="searchText"
+  />
+  <app-button [type]="buttonType" [label]="buttonLabel" />
+</form>

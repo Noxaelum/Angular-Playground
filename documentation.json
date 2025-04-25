@@ -268,7 +268,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-168a7c9b885084055f5b7a82456f15d3b37b57cbb911218b0c0398452f5b7f1121a778086e137f7f9412d34173e541bc007e6de9ca7a01a08f9492218bb8c252",
+            "id": "component-AppComponent-c3aec80faa87b1997c2b4a8757928d8ce75368360da406cbe21f4316d59fc143b1e05a58308804d1b96d57a0787adbce4fdf18c83aa7fa1b0ffcb5b6835ce81b",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -317,7 +317,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { HomeComponent } from './home/home.component';\nimport { HeaderComponent } from './header/header.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [RouterModule, HeaderComponent],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss',\n})\nexport class AppComponent {\n  title = 'Homes';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { HomeComponent } from './home/home.component';\nimport { HeaderComponent } from './molecules/header/header.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [RouterModule, HeaderComponent],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss',\n})\nexport class AppComponent {\n  title = 'Homes';\n}\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -458,6 +458,84 @@
                     }
                 }
             }
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-9c56985d7ea633220012b345c5168fa7c623979e8a8293ca2be73378fc84a9337e2c7989cdfc3dfab86a5a796ca116e34f67e0b665f78fd9707a8269c69a25c3-1",
+            "file": "src/app/atoms/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "\"submit\" | \"reset\" | \"button\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\n\n@Component({\n  selector: 'app-button',\n  imports: [CommonModule, MatButtonModule],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.scss',\n})\nexport class ButtonComponent {\n  @Input() label = 'Button';\n\n  @Input() type: 'submit' | 'reset' | 'button' = 'button';\n\n  @Output() onClick = new EventEmitter<Event>();\n}\n",
+            "styleUrl": "./button.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ButtonComponent-1",
+            "templateData": "<button mat-button [type]=\"type\" (click)=\"onClick.emit($event)\">\n  {{ label }}\n</button>\n"
         },
         {
             "name": "DetailsComponent",
@@ -665,8 +743,8 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-04f090e4bd94deb70b31d8dbab3ee3facc7cc1852eda1bf0a25fd38ffeefdda78839582cff068e8d7f4574659cba80166ef6140cdeaf4e3aac18ab8b0972cb60-1",
-            "file": "src/app/header/header.component.ts",
+            "id": "component-HeaderComponent-b4debe9886fc79d653632f63a84ec07485b1b7cfb7ccda715470cf4cb29dd888dd3e74fbef81a50113a6bb488a2ea8651afbaeb5b505bbf5947944d10150c7a2-1",
+            "file": "src/app/molecules/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -698,7 +776,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { RouterModule } from '@angular/router';\n\n@Component({\n  selector: 'app-header',\n  imports: [RouterModule],\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.scss',\n})\nexport class HeaderComponent {\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { RouterModule } from '@angular/router';\n\n@Component({\n  selector: 'app-header',\n  imports: [RouterModule],\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.scss',\n})\nexport class HeaderComponent {}\n",
             "styleUrl": "./header.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -711,7 +789,7 @@
         },
         {
             "name": "HomeComponent",
-            "id": "component-HomeComponent-eb4e8be4cb9b8a97c54446534e1a8eb812d66ab8d4b658f740b8ce531a2b9941a566a459e9f8e0d7854b43e981191451dbe94f5b0a702cb5be015fb8b517f0e2",
+            "id": "component-HomeComponent-9caafc43455003d4f6b2ed76bd66281f302d9ad098c1d068a1a5559b5435192d34fb50bec7503fbc63aedcc80768dbba3afbffd4b97aa47781ec4077bbd75533",
             "file": "src/app/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -738,7 +816,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 30
                 },
                 {
                     "name": "housingLocationList",
@@ -749,7 +827,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 28
                 },
                 {
                     "name": "housingService",
@@ -760,7 +838,18 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 26
+                    "line": 29
+                },
+                {
+                    "name": "searchText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
                 }
             ],
             "methodsClass": [
@@ -783,7 +872,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36,
+                    "line": 39,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -827,21 +916,25 @@
                     "type": "module"
                 },
                 {
-                    "name": "MatButtonModule",
-                    "type": "module"
-                },
-                {
                     "name": "HousingLocationComponent",
                     "type": "component"
                 },
                 {
                     "name": "NgFor"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "InputComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { FormsModule } from '@angular/forms';\nimport { MatButtonModule } from '@angular/material/button';\nimport { HousingLocationComponent } from '../housing-location/housing-location.component';\nimport { HousingLocation } from '../housing-location';\nimport { NgFor } from '@angular/common';\nimport { HousingService } from '../housing.service';\n\n@Component({\n  selector: 'app-home',\n  imports: [\n    FormsModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatButtonModule,\n    HousingLocationComponent,\n    NgFor,\n  ],\n  templateUrl: './home.component.html',\n  styleUrl: './home.component.scss',\n})\nexport class HomeComponent {\n  housingLocationList: HousingLocation[] = [];\n  housingService: HousingService = inject(HousingService);\n  filteredHousingLocationList: HousingLocation[] = [];\n\n  constructor() {\n    this.housingService.getAllHousingLocations().then((housingLocationList) => {\n      this.housingLocationList = housingLocationList;\n      this.filteredHousingLocationList = housingLocationList;\n    });\n  }\n\n  filterResults(text: string, event: Event) {\n    event.preventDefault();\n\n    if (!text) {\n      this.filteredHousingLocationList = this.housingLocationList;\n      return;\n    }\n\n    this.filteredHousingLocationList = this.housingLocationList.filter(\n      (housingLocation) =>\n        housingLocation?.city.toLowerCase().includes(text.toLowerCase()) ||\n        housingLocation?.name.toLowerCase().includes(text.toLowerCase())\n    );\n  }\n}\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { FormsModule } from '@angular/forms';\nimport { HousingLocationComponent } from '../housing-location/housing-location.component';\nimport { HousingLocation } from '../housing-location';\nimport { NgFor } from '@angular/common';\nimport { HousingService } from '../housing.service';\nimport { ButtonComponent } from '../atoms/button/button.component';\nimport { InputComponent } from '../atoms/input/input.component';\n\n@Component({\n  selector: 'app-home',\n  imports: [\n    FormsModule,\n    MatFormFieldModule,\n    MatInputModule,\n    HousingLocationComponent,\n    NgFor,\n    ButtonComponent,\n    InputComponent,\n  ],\n  templateUrl: './home.component.html',\n  styleUrl: './home.component.scss',\n})\nexport class HomeComponent {\n  searchText = '';\n  housingLocationList: HousingLocation[] = [];\n  housingService: HousingService = inject(HousingService);\n  filteredHousingLocationList: HousingLocation[] = [];\n\n  constructor() {\n    this.housingService.getAllHousingLocations().then((housingLocationList) => {\n      this.housingLocationList = housingLocationList;\n      this.filteredHousingLocationList = housingLocationList;\n    });\n  }\n\n  filterResults(text: string, event: Event) {\n    event.preventDefault();\n\n    if (!text) {\n      this.filteredHousingLocationList = this.housingLocationList;\n      return;\n    }\n\n    this.filteredHousingLocationList = this.housingLocationList.filter(\n      (housingLocation) =>\n        housingLocation?.city.toLowerCase().includes(text.toLowerCase()) ||\n        housingLocation?.name.toLowerCase().includes(text.toLowerCase())\n    );\n  }\n}\n",
             "styleUrl": "./home.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -852,10 +945,10 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 27
+                "line": 30
             },
             "extends": [],
-            "templateData": "<section>\n  <form (submit)=\"filterResults(filter.value, $event)\">\n    <mat-form-field>\n      <mat-label>Filter by city</mat-label>\n      <input matInput type=\"text\" #filter />\n    </mat-form-field>\n    <button mat-button type=\"submit\">Search</button>\n  </form>\n</section>\n<section class=\"housing-location-list\">\n  <app-housing-location\n    *ngFor=\"let housingLocation of filteredHousingLocationList\"\n    [housingLocation]=\"housingLocation\"\n  />\n</section>\n"
+            "templateData": "<section>\n  <form (submit)=\"filterResults(searchText, $event)\">\n    <app-input label=\"Search by city\" type=\"text\" [(searchText)]=\"searchText\" />\n    <app-button type=\"submit\" label=\"Search\" />\n  </form>\n</section>\n<section class=\"housing-location-list\">\n  <app-housing-location\n    *ngFor=\"let housingLocation of filteredHousingLocationList\"\n    [housingLocation]=\"housingLocation\"\n  />\n</section>\n"
         },
         {
             "name": "HousingLocationComponent",
@@ -912,6 +1005,113 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<section class=\"housing-location-card\">\n  <img\n    [src]=\"housingLocation.photo\"\n    alt=\"Exterior Photo of {{ housingLocation.name }}\"\n    crossorigin\n    class=\"housing-location-img\"\n  />\n  <section class=\"housing-location-info-wrapper\">\n    <h2>{{ housingLocation.name }}</h2>\n    <p>{{ housingLocation.city }}, {{ housingLocation.state }}</p>\n    <a mat-button [routerLink]=\"['/details', housingLocation.id]\">Learn More</a>\n  </section>\n</section>\n"
+        },
+        {
+            "name": "InputComponent",
+            "id": "component-InputComponent-65841856c969db1837cedb3439142613f50964f90e4dfda65c8f5eb3694dd8a9be8a7e13104a2ddb5277490e80ca80b5a88b66fe9c74ef06bccaa2ad7b7c5f67",
+            "file": "src/app/atoms/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-input",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "'Input label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "InputType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "searchText",
+                    "defaultValue": "model<string>('')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "updateSearchText",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "MatInputModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, model, Output } from '@angular/core';\nimport { MatInputModule } from '@angular/material/input';\nimport { InputType } from './inputType';\nimport { FormsModule } from '@angular/forms';\n\n@Component({\n  selector: 'app-input',\n  imports: [MatInputModule, FormsModule],\n  templateUrl: './input.component.html',\n  styleUrl: './input.component.scss',\n})\nexport class InputComponent {\n  @Input() label = 'Input label';\n  @Input() type: InputType = 'text';\n\n  searchText = model<string>('');\n\n  updateSearchText(event: Event) {\n    this.searchText.set((event.target as HTMLInputElement).value);\n  }\n}\n",
+            "styleUrl": "./input.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-form-field>\n  <mat-label>{{ label }}</mat-label>\n  <input\n    matInput\n    [type]=\"type\"\n    (input)=\"updateSearchText($event)\"\n  />\n</mat-form-field>\n"
         },
         {
             "name": "PageComponent",
@@ -1023,7 +1223,19 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "InputType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"button\" | \"checkbox\" | \"color\" | \"date\" | \"datetime-local\" | \"email\" | \"file\" | \"hidden\" | \"image\" | \"month\" | \"number\" | \"password\" | \"radio\" | \"range\" | \"reset\" | \"search\" | \"submit\" | \"tel\" | \"text\" | \"time\" | \"url\" | \"week\"",
+                "file": "src/app/atoms/input/inputType.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
             "src/app/app.config.ts": [
@@ -1041,11 +1253,25 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/app/atoms/input/inputType.ts": [
+                {
+                    "name": "InputType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"button\" | \"checkbox\" | \"color\" | \"date\" | \"datetime-local\" | \"email\" | \"file\" | \"hidden\" | \"image\" | \"month\" | \"number\" | \"password\" | \"radio\" | \"range\" | \"reset\" | \"search\" | \"submit\" | \"tel\" | \"text\" | \"time\" | \"url\" | \"week\"",
+                    "file": "src/app/atoms/input/inputType.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ]
+        }
     },
     "routes": [],
     "coverage": {
-        "count": 6,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -1068,6 +1294,34 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/atoms/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/input/inputType.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "InputType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/details/details.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1077,21 +1331,12 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/header/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/home/home.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HomeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -1119,6 +1364,15 @@
                 "name": "HousingService",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

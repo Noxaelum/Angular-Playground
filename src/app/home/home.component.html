@@ -1,11 +1,12 @@
 <section>
-  <form (submit)="filterResults(filter.value, $event)">
-    <mat-form-field>
-      <mat-label>Filter by city</mat-label>
-      <input matInput type="text" #filter />
-    </mat-form-field>
-    <button mat-button type="submit">Search</button>
-  </form>
+  <app-search
+    inputLabel="Search by city"
+    inputType="text"
+    buttonLabel="Search"
+    buttonType="submit"
+    (onSubmit)="filterResults(searchText, $event)"
+    [(searchText)]="searchText"
+  />
 </section>
 <section class="housing-location-list">
   <app-housing-location
