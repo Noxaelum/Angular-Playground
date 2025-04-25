@@ -1,0 +1,23 @@
+.housing-location-card {
+  display: inline-flex;
+  flex-flow: column wrap;
+  border-radius: 1rem;
+  background-color: rgb(202, 226, 255);
+  width: 100%;
+}
+
+.housing-location-img {
+    border-radius: 1rem 1rem 0 0;
+    max-height: 10rem;
+    object-fit: cover;
+}
+
+.housing-location-info-wrapper {
+    padding: 1rem;
+    padding-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}

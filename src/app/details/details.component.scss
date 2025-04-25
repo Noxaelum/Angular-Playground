@@ -1,0 +1,31 @@
+article {
+  display: grid;
+  grid-template-columns: auto 50%;
+  gap: 4rem;
+}
+
+img {
+  object-fit: cover;
+  max-height: 300px;
+  width: 100%;
+}
+
+.details-text-wrapper {
+    display: inline-flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+}
+
+.details-main-header {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.details-location {
+  font-size: 1.25rem;
+}
+
+.details-extra-info-header {
+  font-size: 1.125rem;
+  font-weight: 500;
+}

@@ -1,0 +1,16 @@
+form {
+  display: inline-flex;
+  gap: 2rem;
+}
+
+.housing-location-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .housing-location-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

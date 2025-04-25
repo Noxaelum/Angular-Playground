@@ -1,0 +1,40 @@
+<article>
+  <img
+    [src]="housingLocation?.photo"
+    alt="Exterior Photo of {{ housingLocation?.name }}"
+    crossorigin
+  />
+  <section class="details-text-wrapper">
+    <section>
+      <h2 class="details-main-header">{{ housingLocation?.name }}</h2>
+      <p class="details-location">
+        {{ housingLocation?.city }}, {{ housingLocation?.state }}
+      </p>
+    </section>
+    <section>
+      <h2 class="details-extra-info-header">Housing location information:</h2>
+      <ul>
+        <li>Units available: {{ housingLocation?.availableUnits }}</li>
+        <li>Does this location have wifi: {{ housingLocation?.wifi }}</li>
+        <li>Does this location have laundry: {{ housingLocation?.laundry }}</li>
+      </ul>
+    </section>
+    <section>
+      <form [formGroup]="applyForm" (submit)="submitApplication()">
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput type="text" formControlName="firstName" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput type="text" formControlName="lastName" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" />
+        </mat-form-field>
+        <button type="submit" mat-button>Apply now</button>
+      </form>
+    </section>
+  </section>
+</article>

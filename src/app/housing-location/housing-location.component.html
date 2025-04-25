@@ -1,0 +1,13 @@
+<section class="housing-location-card">
+  <img
+    [src]="housingLocation.photo"
+    alt="Exterior Photo of {{ housingLocation.name }}"
+    crossorigin
+    class="housing-location-img"
+  />
+  <section class="housing-location-info-wrapper">
+    <h2>{{ housingLocation.name }}</h2>
+    <p>{{ housingLocation.city }}, {{ housingLocation.state }}</p>
+    <a mat-button [routerLink]="['/details', housingLocation.id]">Learn More</a>
+  </section>
+</section>
